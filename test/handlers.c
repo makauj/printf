@@ -77,12 +77,13 @@ int handle_hex(va_list args, int uppercase)
 {
 	unsigned int num = va_arg(args, unsigned int);
 	char buffer[32];
+	int i;
 
 	my_itoa(num, buffer, 16);
 
 	if (uppercase)
 	{
-		for (int i = 0; buffer[i] != '\0'; i++)
+		for (i = 0; buffer[i] != '\0'; i++)
 		{
 			if (buffer[i] >= 'a' && buffer[i] <= 'f')
 			{
@@ -127,4 +128,3 @@ int handle_float(va_list args)
 
 	return (write(STDOUT_FILENO, buffer, strlen(buffer)));
 }
-

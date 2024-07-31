@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * handle_hex - Handles the %x and %X format specifiers
  * @args: The argument list

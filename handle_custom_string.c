@@ -29,7 +29,7 @@ void custom_string(va_list args, char *buf, int *buf_index, int *count)
 		}
 		else
 		{
-			buffer[(*buf_index)++] = *str;
+			buf[(*buf_index)++] = *str;
 			(*count)++;
 		}
 		str++;

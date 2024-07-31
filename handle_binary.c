@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * handle_binary - Handles the %b format specifier
  * @args: The argument list

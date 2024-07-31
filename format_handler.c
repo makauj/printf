@@ -28,7 +28,7 @@ int handle_format(const char *format, va_list args, char *buf, int *buf_index)
 					handle_string(args, buf, buf_index, &count);
 					break;
 				case 'S':
-					handle_custom_string(args, buf, buf_index, &count);
+					custom_string(args, buf, buf_index, &count);
 					break;
 				case '%':
 					buf[(*buf_index)++] = '%';
@@ -68,7 +68,7 @@ int handle_format(const char *format, va_list args, char *buf, int *buf_index)
 		}
 		if (*buf_index >= BUFFER_SIZE - 1)
 		{
-			flush_buffer(buffer, buf_index);
+			flush_buffer(buf, buf_index);
 		}
 	}
 	return (count);
