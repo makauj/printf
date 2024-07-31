@@ -149,7 +149,7 @@ int _printf(const char *format, ...)
 				case 'u':
 					u = va_arg(args, unsigned long);
 					my_itoa(u, buffer, 10);
-					for (i = 0; buffer[i] != '\0'; i++)
+					for (i = 1; buffer[i] != '\0'; i++)
 					{
 						count += write(STDOUT_FILENO, &buffer[i], 1);
 					}
