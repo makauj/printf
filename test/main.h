@@ -7,6 +7,7 @@
 #include <string.h>
 #include <limits.h>
 
+#define BUFFER_SIZE 1024
 
 static void reverse(char *str, int length);
 int _printf(const char *format, ...);
