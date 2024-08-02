@@ -21,7 +21,8 @@ void handle_hex(va_list args, char *buf, int *buf_index, int *count, char specif
 void handle_binary(va_list args, char *buf, int *buf_index, int *count);
 void handle_pointer(va_list args, char *buf, int *buf_index, int *count);
 void flush_buffer(char *buffer, int *buf_index);
-
+void short_integer(va_list args, char *buf, int *buf_index, int *count);
+void long_integer(va_list args, char *buf, int *buf_index, int *count)
 void my_itoa(long num, char *str, int base);
 void my_ftoa(double num, char *str, int precision);
 
