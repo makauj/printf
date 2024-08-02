@@ -1,4 +1,6 @@
 #include "main.h"
+#define BUFFER_SIZE 1020
+
 /**
  * _printf - Produces output according to a format
  * @format: The format string
