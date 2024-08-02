@@ -6,10 +6,12 @@
  * @buf_index: current index in the buffer
  * @count: character count
  */
-void apply_flags(char flag, char *buf, int *buf_index, int *count)
+void apply_flags(char flag, char *buf, int *buf_index, int specifier)
 {
-	char specifier;
-	int is_positive;
+	char *count;
+	int is_positive = 0;
+
+	count = 0;
 
 	if (flag == '+')
 	{

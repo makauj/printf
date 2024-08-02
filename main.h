@@ -7,6 +7,8 @@
 #include <stdarg.h>
 #include <unistd.h>
 
+#define BUFFER_SIZE 1020
+void apply_flags(char flag, char *buf, int *buf_index, int specifier);
 int _printf(const char *format, ...);
 int handle_format(const char *format, va_list args, char *buf, int *buf_index);
 void handle_char(va_list args, char *buf, int *buf_index, int *count);
