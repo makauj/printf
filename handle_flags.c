@@ -6,9 +6,9 @@
  * @buf_index: current index in the buffer
  * @count: character count
  */
-void apply_flags(char flag, char *buf, int *buf_index, int specifier)
+void apply_flags(char flag, char *buf, int *buf_index, char specifier)
 {
-	char *count;
+	int *count;
 	int is_positive = 0;
 
 	count = 0;
