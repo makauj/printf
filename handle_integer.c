@@ -31,13 +31,13 @@ void handle_integer(va_list args, char *buf, int *buf_index, int *count)
 }
 
 /**
- * long_integer - Handles the %ld and %li format specifiers
+ * handle_long_int - Handles the %ld and %li format specifiers
  * @args: The argument list
  * @buf: The buffer to store the output
  * @buf_index: The current index in the buffer
  * @count: The character count
  */
-void long_integer(va_list args, char *buf, int *buf_index, int *count)
+void handle_long_int(va_list args, char *buf, int *buf_index, int *count)
 {
 	long num = va_arg(args, long);
 	char num_str[21]; /* Long integers can be up to 20 characters long */
@@ -62,13 +62,13 @@ void long_integer(va_list args, char *buf, int *buf_index, int *count)
 }
 
 /**
- * short_integer - Handles the %hd and %hi format specifiers
+ * handle_short_int - Handles the %hd and %hi format specifiers
  * @args: The argument list
  * @buf: The buffer to store the output
  * @buf_index: The current index in the buffer
  * @count: The character count
  */
-void short_integer(va_list args, char *buf, int *buf_index, int *count)
+void handle_short_int(va_list args, char *buf, int *buf_index, int *count)
 {
 	short num = (short)va_arg(args, int);
 	char num_str[7]; /* Short integers can be up to 6 characters long */
