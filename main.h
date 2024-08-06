@@ -1,29 +1,27 @@
 #ifndef MAIN_H
 #define MAIN_H
-
-#include <stdlib.h>
 #include <stdio.h>
-#include <string.h>
 #include <stdarg.h>
+#include <stdlib.h>
 #include <unistd.h>
+#include <string.h>
+#include <limits.h>
 
-#define BUFFER_SIZE 1020
-void _flags(char flag, char *buf, int *buf_index, int *count, char spec, int is_positive);
+#define BUFFER_SIZE 1024
+
+static void reverse(char *str, int length);
 int _printf(const char *format, ...);
-int handle_format(const char *format, va_list args, char *buf, int *buf_index);
-void handle_char(va_list args, char *buf, int *buf_index, int *count);
-void handle_string(va_list args, char *buf, int *buf_index, int *count);
-void custom_string(va_list args, char *buf, int *buf_index, int *count);
-void handle_integer(va_list args, char *buf, int *buf_index, int *count);
-void handle_unsigned(va_list args, char *buffer, int *buf_index, int *count);
-void handle_octal(va_list args, char *buf, int *buf_index, int *count);
-void handle_hex(va_list args, char *buf, int *buf_index, int *count, char specifier);
-void handle_binary(va_list args, char *buf, int *buf_index, int *count);
-void handle_pointer(va_list args, char *buf, int *buf_index, int *count);
-void flush_buffer(char *buffer, int *buf_index);
-void handle_short_int(va_list args, char *buf, int *buf_index, int *count);
-void handle_long_int(va_list args, char *buf, int *buf_index, int *count)
+int handle_char(va_list args);
+int handle_string(va_list args);
+int handle_int(va_list args);
+int handle_unsigned(va_list args);
+int handle_hex(va_list args, int uppercase);
+int handle_pointer(va_list args);
+int handle_float(va_list args);
+int handle_format(char specifier, va_list args);
 void my_itoa(long num, char *str, int base);
 void my_ftoa(double num, char *str, int precision);
-
+int handle_unknown(char specifier);
+void my_ftoa(double num, char *str, int precision);
 #endif /* MAIN_H */
+
