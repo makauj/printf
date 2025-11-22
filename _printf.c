@@ -88,25 +88,25 @@ void my_ftoa(double num, char *str, int precision)
 }
 
 /**
- * _printf - function mimics functionality of standard printf
- * @format: format string
+ * _printf - Custom implementation of printf.
+ * @format: The format string.
  *
- * Return: count
+ * Return: The number of characters printed.
  */
-
 int _printf(const char *format, ...)
 {
+	char *buffer = malloc(BUFFER_SIZE);
+	if (buffer == NULL) /* Check malloc return value */
+		return -1;
+
+	size_t buf_index = 0;
 	va_list args;
-	int count = 0;
-	char buffer[1000];
-	const char *str;
-	char c;
+	char c, *str;
 	double f;
 	unsigned int x, o;
 	unsigned long u;
 	void *p;
-	int i;
-
+	int i, count = 0;
 	va_start(args, format);
 
 	while (*format)
@@ -188,5 +188,14 @@ int _printf(const char *format, ...)
 		format++;
 	}
 	va_end(args);
-	return (count);
+
+	/* Flush the buffer */
+	if (flush_buffer(buffer, &buf_index) == -1)
+	{
+		free(buffer);
+		return -1; /* Handle flush_buffer failure */
+	}
+
+	free(buffer); /* Ensure free is only called on valid pointers */
+	return buf_index;
 }
