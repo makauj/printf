@@ -8,7 +8,7 @@
  * @count: The character count
  */
 
-void handle_unsigned(va_list args, char *buf, int *buf_index, int *count)
+void handle_unsigned(va_list args, char *buf, size_t *buf_index, int *count)
 {
 	unsigned int num = va_arg(args, unsigned int);
 	char num_str[12];

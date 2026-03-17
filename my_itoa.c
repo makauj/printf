@@ -45,40 +45,5 @@ void my_itoa(long num, char *str, int base)
 	str[j] = '\0';
 }
 
-/**
- * my_ftoa - function to convert a floating-point number to a string
- * @num: floating point number to convert
- * @str: Destination string
- * @precision: No. of digits after decimal point
- */
 
-void my_ftoa(double num, char *str, int precision)
-{
-	long int_part = (long)num;
-	double frac_part = num - int_part;
-	char int_str[32], frac_str[32];
-	int i = 0, j;
-
-	my_itoa(int_part, int_str, 10);
-
-	while (int_str[i] != '\0')
-	{
-		str[i] = int_str[i];
-		i++;
-	}
-
-	str[i++] = '.';
-
-	for (j = 0; j < precision; j++)
-	{
-		frac_part *= 10;
-	}
-
-	my_itoa((long)frac_part, frac_str, 10);
-	for (j = 0; frac_str[j] != '\0'; j++)
-	{
-		str[i++] = frac_str[j];
-	}
-	str[i] = '\0';
-}
 

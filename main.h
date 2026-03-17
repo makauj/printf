@@ -7,23 +7,24 @@
 #include <string.h>
 #include <limits.h>
 #include <stddef.h>
+#include <stdint.h>
 
 #define BUFFER_SIZE 1024
 
-void reverse(char *str, int length); /* Removed static keyword */
 int _printf(const char *format, ...);
-int handle_char(va_list args);
-int handle_string(va_list args);
-int handle_int(va_list args);
-int handle_unsigned(va_list args);
-int handle_hex(va_list args, int uppercase);
-int handle_pointer(va_list args);
-int handle_float(va_list args);
-int handle_format(char specifier, va_list args);
+int handle_format(const char *format, va_list args, char *buf, size_t *buf_index);
+void handle_char(va_list args, char *buf, size_t *buf_index, int *count);
+void handle_string(va_list args, char *buf, size_t *buf_index, int *count);
+void custom_string(va_list args, char *buf, size_t *buf_index, int *count);
+void handle_integer(va_list args, char *buf, size_t *buf_index, int *count);
+void handle_unsigned(va_list args, char *buf, size_t *buf_index, int *count);
+void handle_octal(va_list args, char *buf, size_t *buf_index, int *count);
+void handle_hex(va_list args, char *buf, size_t *buf_index, int *count, char spec);
+void handle_binary(va_list args, char *buf, size_t *buf_index, int *count);
+void handle_pointer(va_list args, char *buf, size_t *buf_index, int *count);
 void my_itoa(long num, char *str, int base);
-void my_ftoa(double num, char *str, int precision); /* Removed duplicate declaration */
+void my_ftoa(double num, char *str, int precision);
 int handle_unknown(char specifier);
-/* flush buffer: returns 0 on success, -1 on error (errno set) */
 int flush_buffer(char *buf, size_t *buf_index);
 
 #endif /* MAIN_H */

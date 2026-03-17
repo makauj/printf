@@ -10,7 +10,7 @@
  * Return: The number of characters printed
  */
 
-int handle_format(const char *format, va_list args, char *buf, int *buf_index)
+int handle_format(const char *format, va_list args, char *buf, size_t *buf_index)
 {
 	int i, count = 0;
 

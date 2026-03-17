@@ -7,7 +7,7 @@
  * @count: The character count
  * @spec: The hex format specifier (either 'x' or 'X')
  */
-void handle_hex(va_list args, char *buf, int *buf_index, int *count, char spec)
+void handle_hex(va_list args, char *buf, size_t *buf_index, int *count, char spec)
 {
 	unsigned int num = va_arg(args, unsigned int);
 	char hex_str[9];

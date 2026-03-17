@@ -7,10 +7,10 @@
  * @buf_index: The current index in the buffer
  * @count: The character count
  */
-void handle_pointer(va_list args, char *buf, int *buf_index, int *count)
+void handle_pointer(va_list args, char *buf, size_t *buf_index, int *count)
 {
 	void *ptr = va_arg(args, void *);
-	unsigned long addr = (unsigned long)ptr;
+	uintptr_t addr = (uintptr_t)ptr;
 	char hex_str[17];
 	int hex_index = 0, j;
 	int digit;

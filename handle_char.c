@@ -8,7 +8,7 @@
  * @count: The character count
  */
 
-void handle_char(va_list args, char *buf, int *buf_index, int *count)
+void handle_char(va_list args, char *buf, size_t *buf_index, int *count)
 {
 	buf[(*buf_index)++] = (char)va_arg(args, int);
 	(*count)++;

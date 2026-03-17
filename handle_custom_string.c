@@ -7,7 +7,7 @@
  * @buf_index: The current index in the buffer
  * @count: The character count
  */
-void custom_string(va_list args, char *buf, int *buf_index, int *count)
+void custom_string(va_list args, char *buf, size_t *buf_index, int *count)
 {
 	char *str = va_arg(args, char *);
 	char hex[3];
